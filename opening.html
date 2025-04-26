@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+       body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url('IMG_7502.JPG') no-repeat center center/cover;
+    color: white;
+    overflow: hidden;
+}
+video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    border-radius: 0;
+    transform: translateY(30px); /* Moves video down */
+}
+input[type="range"] {
+    width: 50%;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 30px;
+}
+#slider {
+    width: 35%;
+    position: absolute;
+    bottom: 150px; /* Moves slider upwards */
+    -webkit-appearance: none;
+    appearance: none;
+    background: black; /* Track background */
+    height: 6px;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* WebKit browsers (Chrome, Safari, Edge) */
+#slider::-webkit-slider-runnable-track {
+    background: black; /* Track background */
+    height: 6px;
+    border-radius: 5px;
+}
+
+/* Progress (filled part of the track) */
+#slider::-webkit-slider-runnable-track {
+    background: black; /* Black track */
+}
+
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: white; /* White circle */
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -7px; /* Aligns thumb with track */
+}
+
+/* Firefox */
+#slider::-moz-range-track {
+    background: black;
+    height: 6px;
+    border-radius: 5px;
+}
+
+#slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#sliderText {
+    position: absolute;
+    bottom: 70px; /* Moves text below the slider */
+    font-size: 1.9rem;
+    font-weight: bold;
+    text-align: center;
+    color: black;
+} 
+    </style>
+    <title>Sliding Animation</title>
+</head>
+<body>
+    <video id="animationVideo" muted>
+        <source src="bloom5.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <input type="range" id="slider" min="0" max="100" value="0">
+    <p id="sliderText">Slide to Bloom</p>
+
+    <script>
+        const video = document.getElementById("animationVideo");
+        const slider = document.getElementById("slider");
+
+        slider.addEventListener("input", () => {
+            const progress = slider.value / 100;
+            video.currentTime = video.duration * progress;
+        });
+
+        slider.addEventListener("change", () => {
+            if (slider.value == 100) {
+                setTimeout(() => {
+                    window.location.replace("main.html");
+                }, 500); // Adjust timing before redirection
+            }
+        });
+    </script>
+</body>
+</html>

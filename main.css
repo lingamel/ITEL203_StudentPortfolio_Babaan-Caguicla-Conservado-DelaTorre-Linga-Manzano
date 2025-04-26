@@ -1,0 +1,1183 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+html, body {
+    height: auto;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    background: url('Portfolio - design (1).png') no-repeat center center;
+    background-size: 100% auto; /* Adjust width while keeping natural height */
+    background-attachment: fixed; /* Prevents scrolling issues */
+    transition: background 0.3s ease-in-out;
+    margin: 0;
+}
+@media (max-width: 768px) {
+    html,body {
+        background: url('Portfolio - design (1).png') no-repeat center center;
+        overflow-x: visible;
+        background-size: cover; /* or try 200% if you want zoomed-in */
+        background-attachment: scroll; /* allow background to move with content */
+    }
+}
+.highlight {
+    background-color: yellow; /* Example highlight color */
+}
+header {
+    width: 60%;
+    background: #2aa8b4;
+    padding: 20px 15px; /* Increased padding to make the header taller */
+    top: 5%; /* Moves the header upwards */
+    border-radius: 10px;
+    position: fixed;
+    z-index: 100; /* Ensures header stays on top */
+}
+@media (max-width: 768px) {
+    header {
+        width: 95%; /* Make it wider on small screens */
+        top: 2%; /* Adjust position if needed */
+        padding: 15px 10px; /* Slightly reduce padding */
+        left: 50%;
+        transform: translateX(-50%); /* Center it horizontally */
+    }
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 50px;
+}
+
+/* Default styles */
+ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.3rem;
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Active state - only one at a time */
+ul li a.active {
+    color: black; /* Highlight text in black */
+    font-weight: bold;
+}
+
+/* Only show flower icon for the active menu */
+ul li a.active i {
+    margin-right: 8px;
+    color: black;
+    font-size: 1.3rem;
+}
+
+/* Hover effect */
+ul li a:hover {
+    color: black;
+}
+
+/* Underline animation */
+ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 3px;
+    background-color: black;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Expand underline when hovered */
+ul li a:hover::after {
+    transform: scaleX(1);
+}
+
+.search-bar {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.logo {
+    height: 50px;
+}
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 5px;
+    width: 220px; /* Adjust width as needed */
+}
+
+/* Center text inside search bar */
+.search-bar {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    padding: 10px;
+    border: none;
+    outline: none;
+    width: 100%;
+    text-align: center; /* Centers text inside */
+}
+
+/* Magnifying Glass Icon */
+.search-container i {
+    position: absolute;
+    right: 10px;
+    color: gray;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+/* About Us Section */
+.about-section {
+    width: 80%;
+    min-height: 700px;
+    margin-top: 140px; /* Lowered slightly */
+    text-align: center;
+}
+
+.about-title {
+    display: flex; /* Change to flex for full control */
+    align-items: center;
+    justify-content: flex-start; /* Align to the left */
+    width: 100%; /* Ensure it takes full width */
+    margin-bottom: -20px;
+    text-align: left; /* Ensure text is aligned left */
+}
+
+.about-title h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #9d89be;
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0; /* Remove extra spacing */
+    display: inline-block;
+}
+
+.about-logo {
+    height: 120px; 
+    margin: 0; 
+    margin-left: -20px; /* Move it closer to text */
+    vertical-align: middle;
+}
+
+/* About Us Container */
+.about-container {
+    width: 80%;
+    background: white;
+    border-radius: 50px;
+    border: 2px solid #2aa8b4;
+    padding: 65px;
+    margin: 0 auto;
+    text-align: center;
+    color: #2aa8b4;
+    font-size: 1.9rem;
+    line-height: 1.8;
+}
+
+.members-bg {
+    background: url('IMG_7504.JPG') no-repeat center center;
+    background-size: 100% auto; /* Stretch width but keep height proportionate */
+    background-attachment: fixed; /* Prevents too much movement on scroll */
+    transition: background 0.3s ease-in-out;
+}
+@media (max-width: 768px) {
+    .members-bg {
+        background: url('IMG_7504.JPG') no-repeat center center;
+        background-size: 300% auto; 
+        background-attachment: fixed; 
+        transition: background 0.1s ease-in-out;
+    }
+}
+.members-section {
+    width: 90%;
+    padding: 60px;
+    margin: 150px auto 50px; /* Increased margin to push it down */
+    text-align: center;
+    color: #2aa8b4;
+    font-size: 1.7rem;
+    display: block;
+    min-height: 600px; /* Ensure it takes up enough space */
+}
+.members-title {
+    text-align: center;
+    font-size: 2.0rem;
+    color: #2aa8b4;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.cards-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 50px;
+    padding: 20px;
+    perspective: 1000px; /* Needed for 3D flip effect */
+}
+
+.card {
+    width: 235px;
+    height: 355px;
+    border-radius: 20px;
+
+    perspective: 1000px;
+    cursor: pointer;
+}
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+.card-inner.flipped {
+    transform: rotateY(180deg);
+}
+.card-front,
+.card-back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.card-back {
+    position: relative;
+    transform: rotateY(180deg);
+    align-items: center;
+    border-radius: 20px;
+    overflow: hidden;
+    width: 235px;
+    height: 355px;
+    
+}
+.card-back img {
+    width: 100%;  /* Makes the image fully cover the .card-back */
+    height: 100%; /* Ensures it fills the .card-back */
+    object-fit: cover; /* Keeps the image from stretching */
+    border-radius: 20px; /* Matches the card’s border radius */
+}
+
+.card-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nickname {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.fullname {
+    font-size: 14px;
+    font-weight: normal;
+}
+.card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    backface-visibility: hidden; /* Prevents image from appearing backwards */
+}
+
+/* Hover Effect */
+.card:hover {
+    transform: scale(1.05);
+}
+/* Different Gradient Colors for Each Card */
+.card:nth-child(1) .card-front { background: linear-gradient(to bottom right, #ee9bf0, #d768db); }
+.card:nth-child(2) .card-front { background: linear-gradient(to bottom right, #f79fd2, #ffd1ec); }
+.card:nth-child(3) .card-front { background: linear-gradient(to bottom right, #b123b6, #df67e3); }
+.card:nth-child(4) .card-front { background: linear-gradient(to bottom right, #a1c4fd, #c2e9fb); }
+.card:nth-child(5) .card-front { background: linear-gradient(to bottom right, #00d2ff, #3a7bd5); }
+.card:nth-child(6) .card-front { background: linear-gradient(to bottom right, #800000, #d14444); }
+/* Flip Animations */
+.flip-left {
+    animation: flipLeft 0.5s ease-in-out forwards;
+}
+
+.flip-right {
+    animation: flipRight 0.5s ease-in-out forwards;
+}
+
+/* Reverse Flip Animations */
+.flip-back-left {
+    animation: flipBackLeft 0.5s ease-in-out forwards;
+}
+
+.flip-back-right {
+    animation: flipBackRight 0.5s ease-in-out forwards;
+}
+
+/* Flip Forward */
+@keyframes flipLeft {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(-180deg); }
+}
+
+@keyframes flipRight {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(180deg); }
+}
+
+/* Flip Backward */
+@keyframes flipBackLeft {
+    from { transform: rotateY(-180deg); }
+    to { transform: rotateY(0deg); }
+}
+
+@keyframes flipBackRight {
+    from { transform: rotateY(180deg); }
+    to { transform: rotateY(0deg); }
+}
+.personal-info-section {
+    width: 80%;
+    padding: 40px;
+    margin: 15px auto 150px; /* Increased margin to push it down */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: #2aa8b4;
+    font-size: 1.7rem;
+    min-height: 100px; /* Ensure it takes up enough space */
+    color: initial;
+    margin-top: -800px;
+}
+@media (max-width: 768px) {
+    .personal-info-section {
+        width: 200%;
+        padding: 40px;
+        margin: 150px auto 150px; /* Increased margin to push it down */
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        color: #2aa8b4;
+        font-size: 1.7rem;
+        min-height: 100px; /* Ensure it takes up enough space */
+        color: initial;
+        margin-top: -800px;
+    }
+}
+.personal-info-container {
+    width: 100%; 
+    max-width: 1500px; 
+    max-height: 1550px;
+    padding: 20px 20px 20px; /* Increased top padding to make space for the header */
+    position: relative; /* Needed for absolute positioning of the header */
+    border-radius: 10px;
+    margin-top: 50px;
+    /* border: 2px solid red; */
+}
+.personal-info-bg {
+    background: url('IMG_7505.JPG') no-repeat center center;
+    background-size: 100% auto; /* Stretch width but keep height proportionate */
+    background-attachment: fixed; /* Prevents too much movement on scroll */
+    transition: background 0.1s ease-in-out;
+}
+@media (max-width: 768px) {
+    .personal-info-bg {
+        background: url('IMG_7505.JPG') no-repeat center center;
+        background-size: 300% auto; 
+        background-attachment: fixed; 
+        transition: background 0.1s ease-in-out;
+    }
+}
+.personal-info-header {
+    position: absolute; /* Position inside the container */
+    top: 0; /* Align it at the top */
+    right: 0; /* Align it to the right */
+    width: 50%; /* Set width */
+    height: 60px; /* Adjust height */
+    display: flex; /* Arrange items in a horizontal line */
+    align-items: center; /* Center items vertically */
+    justify-content: flex-end; /* Align text to the right */
+    gap: 0px; /* Space between names */
+    padding: 0 20px; /* Add padding on the sides */
+    font-size: 1.5rem; /* Make text bigger */
+    font-weight: bold;
+    border-radius: 10px; /* Optional rounded corners */
+    transition: position 0.3s ease-in-out;
+}
+/* Gradient background applied to each name */
+.personal-info-header span {
+    background: linear-gradient(to right, #2aa8b4, #53ccd6); /* Gradient effect */
+    color: white; /* Keep text color white */
+    padding: 10px 20px; /* Space around text */
+    border-radius: 8px; /* Slight rounding for aesthetics */
+    font-weight: bold;
+    
+}
+.personal-info-header span.active {
+    background: linear-gradient(to right, #53ccd6, #2aa8b4);
+    color: #fff;
+    font-weight: bold;
+    transform: scale(1.1);
+}
+.personal-info-content {
+    display: flex;
+    align-items: flex-start; /* Align items at the top */
+    gap: 40px; /* Space between image and text */
+    padding: 20px;
+    justify-content: flex-start;
+}
+
+.personal-info-item {
+    display: flex;
+    align-items: flex-start; /* Align content at the top */
+    justify-content: flex-start; /* Align content to the left */
+    gap: 0px; /* Adds space between the image and text */
+    overflow: hidden;
+    padding-right: 10px; /* Add some padding for better readability */
+    position: relative; /* Allows moving elements inside */
+    
+}
+
+.personal-info-item img {
+    width: 650px; /* Keep your desired size */
+    height: 600px; /* Keep your height */
+    object-fit: cover; /* Ensures the image covers the space properly */
+    position: relative; /* Allows movement */
+    top: -25px; /* Moves image UP by 50px */
+}
+
+.personal-info-text {
+    max-width: 700px;
+    text-align: left; /* Ensure text is aligned left */
+}
+
+.personal-info-text h2 {
+    font-size: 3.0rem;
+    font-weight: bold;
+    color: #000; /* Ensure title is visible */
+    margin-bottom: 10px;
+    text-align: left; /* Align title to the left */
+}
+
+.personal-info-text p {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: #000;
+    text-align: left; /* Align paragraph text to the left */
+}
+/* Show the active one */
+.personal-info-item.active {
+    display: flex;
+}
+
+/* Style for the active name */
+
+
+.new-container {
+    position: absolute; /* Keep it in a fixed spot relative to the parent */
+    top: 810px; /* Adjust the top position */
+    left: -520px; /* Adjust left/right placement */
+    padding: 60px;
+    background-image: url('bg-1.jpeg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #5843d0;
+    border-radius: 20px;
+    width: 1050px; /* Set a fixed width */
+    text-align: left;
+}
+body, .personal-info-text, .new-container {
+    font-family: "Cambria", "Times New Roman", serif;
+}
+
+/* Style for the "It's Name's World" part */
+.bini-name {
+    color: #0a676f;
+    font-weight: 500;
+    font-size: 3.8rem;
+    margin-bottom: 0; /* Remove bottom margin */
+    display: block; /* Ensure it takes full width */
+    line-height: 0.1; /* Reduce line height */
+    letter-spacing: 2px; /* Adjust letter spacing */
+}
+
+.bini-name strong {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700; /* Adjust weight if needed */
+}
+
+/* Style for the second text */
+.bini-text {
+    color: #7d4ec7;
+    font-size: 1.5rem;
+    margin-top: 5px; /* Reduce space between elements */
+    line-height: 1.2; /* Adjust text spacing */
+    letter-spacing: 2px; /* Adjust letter spacing */
+}
+
+/* Make the "Name" inside the paragraph bold */
+.bini-text strong {
+    font-weight: 900;
+}
+.text-container {
+    position: relative; /* Ensures interest_img can be positioned */
+    height: 1800px;
+}
+
+.text-container img {
+    position: absolute; /* Allows precise placement */
+    top: 1095px; /* Adjust this value to move the image up/down */
+    left: -570px; /* Adjust this value to move the image left/right */
+    width: 1200px; /* Adjust width */
+    max-width: 300%; /* Ensures it does not exceed the container width */
+    height: auto; /* Maintain aspect ratio */
+}
+.new-container-bg {
+    background: url('IMG_7510.JPG') no-repeat center center;
+    background-size: 100% auto; 
+    background-attachment: fixed; 
+    transition: background 0.1s ease-in-out;
+}
+@media (max-width: 768px) {
+    .new-container-bg {
+        background: url('IMG_7510.JPG') no-repeat center center;
+        background-size: 300% auto; 
+        background-attachment: fixed; 
+        transition: background 0.1s ease-in-out;
+    }
+}
+.overlay-image {
+    position: relative; /* Fixed position to stay visible even when scrolling */
+    left: -960px; /* Distance from the left side */
+    top: 280px; /* Center it vertically */
+    width: 800px; /* Adjust width as needed */
+    height: 800px; /* Maintain aspect ratio */
+    z-index: 90; /* Make sure it stays on top */
+}
+.clip-image {
+    position: relative; /* Fixed position to stay visible even when scrolling */
+    left: -525px; /* Distance from the left side */
+    top: -750px; /* Center it vertically */
+    width: 200px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 90; /* Make sure it stays on top */
+}
+.butterfly-image {
+    position: relative; /* Fixed position to stay visible even when scrolling */
+    left: 150px; /* Distance from the left side */
+    top: -795px; /* Center it vertically */
+    width: 100px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 90; /* Make sure it stays on top */
+}
+.small-star-image {
+    position: relative; /* Fixed position to stay visible even when scrolling */
+    left: 510px; /* Distance from the left side */
+    top: -1200px; /* Center it vertically */
+    width: 200px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 90; /* Make sure it stays on top */
+}
+.small-flower {
+    position: relative; /* Fixed position to stay visible even when scrolling */
+    left: 650px; /* Distance from the left side */
+    top: -1595px; /* Center it vertically */
+    width: 100px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 90; /* Make sure it stays on top */
+}
+.yellow-gem {
+    position: relative; /* Fixed position to stay visible even when scrolling */
+    left: -130px; /* Distance from the left side */
+    top: -1680px; /* Center it vertically */
+    width: 150px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 90; /* Make sure it stays on top */
+}
+.heart {
+    position: relative; /* Fixed position to stay visible even when scrolling */
+    left: 510px; /* Distance from the left side */
+    top: 2070px; /* Center it vertically */
+    width: 100px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 90; /* Make sure it stays on top */
+}
+.orange-gem {
+    position: relative; /* Fixed position to stay visible even when scrolling */
+    left: -160px; /* Distance from the left side */
+    top: 1545px; /* Center it vertically */
+    width: 100px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 90; /* Make sure it stays on top */
+}
+.pink-gem {
+    position: relative; /* Fixed position to stay visible even when scrolling */
+    left: -500px; /* Distance from the left side */
+    top: 1820px; /* Center it vertically */
+    width: 150px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 90;
+    transform: rotate(-20deg); /* Make sure it stays on top */
+}
+.small-star-image2 {
+    position: relative; /* Fixed position to stay visible even when scrolling */
+    left: -610px; /* Distance from the left side */
+    top: -1000px; /* Center it vertically */
+    width: 200px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 90; /* Make sure it stays on top */
+}
+.clip-image2 {
+    position: relative; /* Fixed position to stay visible even when scrolling */
+    left: 725px; /* Distance from the left side */
+    top: -850px; /* Center it vertically */
+    width: 200px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 90; /* Make sure it stays on top */
+    transform: rotate(-170deg);
+}
+.orange-gem2 {
+    position: relative; /* Fixed position to stay visible even when scrolling */
+    left: -690px; /* Distance from the left side */
+    top: 290px; /* Center it vertically */
+    width: 100px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 90; /* Make sure it stays on top */
+}
+.pink-gem2 {
+    position: relative; /* Fixed position to stay visible even when scrolling */
+    left: 10px; /* Distance from the left side */
+    top: -100px; /* Center it vertically */
+    width: 150px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 90;
+    transform: rotate(-70deg); /* Make sure it stays on top */
+}
+.social-icons {
+    position: absolute;
+    top: -2%; /* Adjust position below interest_img */
+    left: 157%;
+    transform: translateX(-50%);
+    width: 200px; /* Adjust based on spacing */
+    height: auto;
+}
+
+.social-icons a {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+}
+
+.social-icons a:nth-child(1) { /* Facebook */
+    left: 0px;
+    
+}
+
+.social-icons a:nth-child(2) { /* Instagram */
+    left: 70px;
+}
+
+.social-icons a:nth-child(3) { /* Gmail */
+    left: 140px;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.2);
+}
+
+.gallery-section {
+    width: 80%;
+    padding: 40px;
+    margin: -150px auto 650px; /* Increased margin to push it down */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: #2aa8b4;
+    font-size: 1.7rem;
+    min-height: 600px; /* Ensure it takes up enough space */
+    /* border: 2px solid red; */
+    margin-top: -400px;
+    
+}
+@media (max-width: 768px) {
+    .gallery-section {
+        width: 140%;
+        padding: 40px;
+        margin: -150px auto 650px; /* Increased margin to push it down */
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        color: #2aa8b4;
+        font-size: 1.7rem;
+        min-height: 600px; /* Ensure it takes up enough space */
+        /* border: 2px solid red; */
+        margin-top: -400px;
+    }
+}
+.gallery-container {
+    width: 80%; 
+    max-width: 1200px; 
+    padding: 80px 50px 100px; /* Increased top padding to make space for the header */
+    position: relative; /* Needed for absolute positioning of the header */
+    border-radius: 10px;
+    /* border: 2px solid red; */
+    margin-top: -180px;
+}
+.gallery-title {
+    margin-bottom: 10px;
+    margin-left: -720px;
+    font-size: 2.5em;
+    color: #a261a6;
+}
+.everyone-img {
+    width: 90%;         /* Make image stretch full width of container */
+    height: auto;        /* Maintain aspect ratio */
+    max-width: 1600px;    /* Optional: limit the maximum size */
+    display: block;
+    margin: 0 auto;      /* Center the image */
+    margin-top: -90px;
+}
+.gallery-bg {
+    background: url('IMG_7507.JPG') no-repeat center center;
+    background-size: 100% auto; 
+    background-attachment: fixed; 
+    transition: background 0.1s ease-in-out;
+}
+@media (max-width: 768px) {
+    .gallery-bg {
+        background: url('IMG_7507.JPG') no-repeat center center;
+        background-size: 300% auto; 
+        background-attachment: fixed; 
+        transition: background 0.1s ease-in-out;
+    }
+}
+.main-footer {
+    background-color: #2aa8b4;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin-top: 50px;
+    width: 100%;
+    overflow-y: hidden;
+    
+}
+@media (max-width: 768px) {
+    .main-footer {
+        background-color: #2aa8b4;
+        color: white;
+        text-align: center;
+        padding: 20px 0;
+        font-family: Arial, sans-serif;
+        font-size: 16px;
+        margin-top: 50px;
+        width: 400%;
+    }
+}
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+}
+.footer-content p{
+    margin-left: 700px;
+}
+.footer-logo {
+    height: 60px;      
+    margin-left: -330px;
+}
+.footer-bg {
+    background: url('end-background.png') no-repeat center center;
+    background-size: 100% auto; 
+    background-attachment: fixed; 
+    transition: background 0.1s ease-in-out;
+}
+@media (max-width: 768px) {
+    .footer-bg {
+        background: url('end-background.png') no-repeat center center;
+        background-size: 200% auto; 
+        background-attachment: fixed; 
+        transition: background 0.1s ease-in-out;
+    }
+}
+.projects-section {
+    width: 100%;
+    padding: 40px;
+    margin: -150px auto 650px; /* Increased margin to push it down */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    color: #2aa8b4;
+    font-size: 1.7rem;
+    min-height: 600px; /* Ensure it takes up enough space */
+    /* border: 2px solid red; */
+    margin-top: -1500px;
+}
+@media (max-width: 768px) {
+    .projects-section {
+        width: 100%;
+        padding: 40px;
+        margin: -150px auto 350px; /* Increased margin to push it down */
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        color: #2aa8b4;
+        font-size: 1.7rem;
+        min-height: 600px; /* Ensure it takes up enough space */
+        /* border: 2px solid red; */
+        margin-top: -900px;
+        margin-left: 300px;
+    }
+}
+.projects-container {
+    width: 90%; 
+    max-width: 1500px; 
+    padding: 80px 50px 100px; /* Increased top padding to make space for the header */
+    position: relative; /* Needed for absolute positioning of the header */
+    border-radius: 10px;
+    /* border: 2px solid red; */
+    margin-top: 10px;
+    
+}
+@media (max-width: 768px) {
+    .projects-container {
+        width: 160%; 
+        max-width: 2500px; 
+        padding: 80px 50px 100px; /* Increased top padding to make space for the header */
+        position: relative; /* Needed for absolute positioning of the header */
+        border-radius: 10px;
+        /* border: 2px solid red; */
+        margin-top: 10px;
+        
+    }
+}
+.projects-info-header {
+    position: absolute; /* Position inside the container */
+    top: 0; /* Align it at the top */
+    right: 0; /* Align it to the right */
+    width: 97%; /* Set width */
+    height: 60px; /* Adjust height */
+    display: flex; /* Arrange items in a horizontal line */
+    align-items: center; /* Center items vertically */
+    justify-content: flex-start; /* Align text to the right */
+    gap: 0px; /* Space between names */
+    padding: 0 20px; /* Add padding on the sides */
+    font-size: 1.5rem; /* Make text bigger */
+    font-weight: bold;
+    border-radius: 10px; /* Optional rounded corners */
+    transition: position 0.3s ease-in-out;
+}
+/* Gradient background applied to each name */
+.projects-info-header span {
+    background: linear-gradient(to right, #2aa8b4, #53ccd6); /* Gradient effect */
+    color: white; /* Keep text color white */
+    padding: 10px 20px; /* Space around text */
+    border-radius: 8px; /* Slight rounding for aesthetics */
+    font-weight: bold;
+    
+}
+.projects-info-header span.active {
+    background: linear-gradient(to right, #53ccd6, #2aa8b4);
+    color: #fff;
+    font-weight: bold;
+    transform: scale(1.1);
+}
+.project-card {
+    background-image: url('bg-1.jpeg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    border-radius: 35px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    animation: fadeIn 0.3s ease-in;
+}
+@media (max-width: 768px) {
+    .projects-card {
+        background-image: url('bg-1.jpeg'); /* Replace with your image path */
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 170%; /* Make it take up more horizontal space */
+        padding: 95px;
+        border-radius: 35px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        animation: fadeIn 0.3s ease-in;
+    }
+}
+.project-card h3{
+    font-size: 55px;
+    margin-bottom: -40px;
+    color: #0a676f;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.skills-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.skills-column {
+    flex: 1;
+}
+.skills-column .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 items per row */
+    gap: 0.8rem;
+}
+
+.skills-column h4 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #a261a6;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    color: #a261a6;
+    padding-left: 100px;
+}
+
+.skill-item img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    object-fit: contain;
+}
+.device-carousel {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.carousel-container {
+    position: relative;
+    width: 900px; /* Ensure the container is wide enough for both images */
+    height: 600px;
+    margin: auto;
+    /* border: 2px solid red; */
+    margin-left: 700px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    align-items: center; /* Center the items vertically */
+}
+
+.device-item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* perfect centering */
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    opacity: 0;
+}
+.device-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    opacity: 0;
+}
+
+.device-wrapper.front {
+    opacity: 1;
+    transform: translate(-50%, -50%); 
+    z-index: 10;
+}
+
+.device-wrapper.back {
+    opacity: 0; /* Fully transparent */
+    transform: translate(-150%, -50%);
+    z-index: 1;
+    pointer-events: none; /* Prevent any interaction */
+}
+.device-video {
+    position: absolute;
+    top: 11%; /* Adjust these values as needed to fit in the screen */
+    left: 14%;
+    width: 74%;
+    height: 76%;
+    object-fit: cover;
+    border-radius: 10px;
+    pointer-events: none;
+    z-index: -1; 
+}
+
+.device-video.phone {
+    top: 6%;
+    left: 8%;
+    width: 78%;
+    height: 90%;
+    z-index: -1; 
+    border-radius: 30px;
+}
+
+.device-arrows {
+    margin-top: 2rem;
+    margin-left: 51rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    z-index: 10; /* Ensures the buttons are on top */
+}
+
+.device-arrows button {
+    font-size: 2rem;
+    padding: 0.5rem 1.2rem;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(to top, #53ccd6, #2aa8b4);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: relative;
+    z-index: 2; /* Make sure the button is above other elements */
+}
+
+.device-arrows button:hover {
+    background: linear-gradient(to top, #1d7880, #2aa8b4)
+}
+.device-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 40px;
+    margin-top: 50px;
+    padding: 20px;
+}
+
+/* Rectangle box */
+.device-description-box {
+    margin-top: -700px;
+    margin-left: -101px;
+    width: 750px;
+    height: 630px;
+    background: linear-gradient(to top, #d0c3f7, #e8d8ff);/* Slightly transparent white */
+    border-radius: 30px;
+    padding: 20px;
+    color: #0a676f;
+    font-family: Cambria, serif;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.device-description-box p {
+    font-size: 24px; /* or any size you prefer */
+    color: #000000;
+    
+}
+.tech-used {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns of equal width */
+    gap: 30px 40px; /* row-gap, column-gap */
+    padding: 10px;
+    color: #000000;
+}
+.tech-used h4{
+    margin-top: 15px;
+}
+
+.tech-item {
+    margin-top: -20px;
+    margin-left: 120px;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+.cv-button {
+    background: linear-gradient(to bottom, #53ccd6, #2aa8b4);
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    padding: 15px 50px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    margin-top: 40px;
+  }
+  
+  .cv-button:hover {
+    background: linear-gradient(to top, #53ccd6, #2aa8b4);
+  }
+  
+  /* Modal Styles */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+  }
+  
+  .modal-content {
+    background-color: white;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 12px;
+    width: 60%;
+    max-width: 600px;
+    position: relative;
+  }
+  
+  .close {
+    color: #aaa;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: black;
+  }
